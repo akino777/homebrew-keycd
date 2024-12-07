@@ -9,12 +9,11 @@ class Keycd < Formula
   license "MIT"
 
   depends_on "swift" => :build
-  depends_on :xcode
 
   def install
     system "swift", "package", "resolve"
     system "swift", "build", "-c", "release"
-    bin.install ".build/release/keycd"
+    bin.install ".build/release/keycd" if File.exist?(".build/release/keycd")
   end
 
   test do
