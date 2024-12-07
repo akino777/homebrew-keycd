@@ -9,8 +9,10 @@ class Keycd < Formula
   license "MIT"
 
   depends_on "swift" => :build
+  depends_on :xcode
 
   def install
+    system "swift", "package", "resolve"
     system "swift", "build", "-c", "release"
     bin.install ".build/release/keycd"
   end
