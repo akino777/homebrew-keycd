@@ -8,13 +8,11 @@ class Keycd < Formula
   sha256 "ca6dc394d8674af66d91abc8d6b8f08f3fc00807ed8bad64b8cd2512ebaf9e4c"
   license "MIT"
 
-  # depends_on "cmake" => :build
+  depends_on "swift" => :build
 
   def install
-    # Remove unrecognized options if they cause configure to fail
-    # https://rubydoc.brew.sh/Formula.html#std_configure_args-instance_method
-    system "./configure", "--disable-silent-rules", *std_configure_args
-    # system "cmake", "-S", ".", "-B", "build", *std_cmake_args
+    system "swift", "build", "-c", "release"
+    bin.install ".build/release/keycd"
   end
 
   test do
