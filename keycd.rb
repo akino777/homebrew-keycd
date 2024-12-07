@@ -12,7 +12,7 @@ class Keycd < Formula
 
   def install
     system "swift", "package", "resolve"
-    system "swift", "build", "-c", "release"
+    system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install ".build/release/keycd" if File.exist?(".build/release/keycd")
   end
 
