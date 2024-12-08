@@ -11,7 +11,7 @@ class Keycd < Formula
   depends_on "swift" => :build
 
   def install
-    system "swift", "build", "-c", "release"
+    system "swift", "build", "-c", "release", "--disable-sandbox"
     bin.install ".build/release/keycd"
   end
 
