@@ -2,17 +2,18 @@
 #                https://rubydoc.brew.sh/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 class Keycd < Formula
-  desc "A simple command line tool to quickly switch between directories."
-  homepage ""
-  url "https://github.com/akino777/keycd/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "ca6dc394d8674af66d91abc8d6b8f08f3fc00807ed8bad64b8cd2512ebaf9e4c"
-  license "MIT"
+  desc 'A simple command line tool to quickly switch between directories.'
+  homepage ''
+  url 'https://github.com/akino777/keycd/archive/refs/tags/v1.0.1.tar.gz'
+  sha256 'a0f31fe6af027a7744d30d0ed340dbd57f05a2666089721d23fed01dcfed1000'
+  license 'MIT'
+  version '1.0.1'
 
-  depends_on "swift" => :build
+  depends_on 'swift' => :build
 
   def install
-    system "swift", "build", "-c", "release", "--disable-sandbox"
-    bin.install ".build/release/keycd"
+    system 'swift', 'build', '-c', 'release', '--disable-sandbox'
+    bin.install '.build/release/keycd'
   end
 
   test do
@@ -25,6 +26,6 @@ class Keycd < Formula
     #
     # The installed folder is not in the path, so use the entire path to any
     # executables being tested: `system bin/"program", "do", "something"`.
-    system "false"
+    system 'false'
   end
 end
