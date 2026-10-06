@@ -9,7 +9,7 @@ class Keycd < Formula
   license 'MIT'
   version '2.0.0'
 
-  depends_on 'swift' => :build
+  uses_from_macos 'swift' => :build
 
   def install
     system 'swift', 'build', '-c', 'release', '--disable-sandbox'
