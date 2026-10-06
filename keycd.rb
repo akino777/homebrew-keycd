@@ -4,10 +4,10 @@
 class Keycd < Formula
   desc 'A simple command line tool to quickly switch between directories.'
   homepage ''
-  url 'https://github.com/akino777/keycd/archive/refs/tags/v1.0.1.tar.gz'
-  sha256 'a0f31fe6af027a7744d30d0ed340dbd57f05a2666089721d23fed01dcfed1000'
+  url 'https://github.com/akino777/keycd/archive/refs/tags/v2.0.0.tar.gz'
+  sha256 '8df9686eb4650d578c78e3c21a7f07388f9c54eccf32f78709eb923492420fe1'
   license 'MIT'
-  version '1.0.1'
+  version '2.0.0'
 
   depends_on 'swift' => :build
 
